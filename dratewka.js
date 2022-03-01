@@ -24,7 +24,7 @@ map = {
     location_list: [],
     current_location: 27,
     current_location_object: null,
-    ship_items_used: 0,
+    sheep_items_used: 0,
     dragon_killed: 0,
 
     init_game: function(){
@@ -323,13 +323,14 @@ map = {
             }
             else if(location_number == 41 && player.items[0].id == 11){
                 result_item = this.return_item_of_given_id(12)
+                console.log(result_item)
 
                 player.items.shift()
                 player.items.push(result_item)
             }
             else if(location_number == 23 && player.items[0].id == 12){
                 result_item = this.return_item_of_given_id(13)
-                this.ship_items_used += 1
+                this.sheep_items_used += 1
 
                 player.items.shift()
                 this.current_location_object.items.push(result_item)
@@ -348,7 +349,7 @@ map = {
             }
             else if(location_number == 23 && player.items[0].id == 16){
                 result_item = this.return_item_of_given_id(17)
-                this.ship_items_used += 1
+                this.sheep_items_used += 1
 
                 player.items.shift()
                 this.current_location_object.items.push(result_item)
@@ -361,7 +362,7 @@ map = {
             }
             else if(location_number == 23 && player.items[0].id == 19){
                 result_item = this.return_item_of_given_id(20)
-                this.ship_items_used += 1
+                this.sheep_items_used += 1
 
                 player.items.shift()
                 this.current_location_object.items.push(result_item)
@@ -374,7 +375,7 @@ map = {
             }
             else if(location_number == 23 && player.items[0].id == 22){
                 result_item = this.return_item_of_given_id(23)
-                this.ship_items_used += 1
+                this.sheep_items_used += 1
 
                 player.items.shift()
                 this.current_location_object.items.push(result_item)
@@ -387,7 +388,7 @@ map = {
             }
             else if(location_number == 23 && player.items[0].id == 25){
                 result_item = this.return_item_of_given_id(26)
-                this.ship_items_used += 1
+                this.sheep_items_used += 1
 
                 player.items.shift()
                 this.current_location_object.items.push(result_item)
@@ -400,7 +401,7 @@ map = {
             }
             else if(location_number == 23 && player.items[0].id == 28){
                 result_item = this.return_item_of_given_id(29)
-                this.ship_items_used += 1
+                this.sheep_items_used += 1
 
                 player.items.shift()
                 this.current_location_object.items.push(result_item)
@@ -413,6 +414,12 @@ map = {
                 player.items.shift()
                 this.current_location_object.items.push(result_item)
             }
+            else if(location_number == 23 && player.items[0].id == 33 && this.dragon_killed == 1){
+                result_item = this.return_item_of_given_id(34)
+
+                player.items.shift()
+                player.items.push(result_item)
+            } 
             else if(location_number == 34 && player.items[0].id == 34){
                 result_item = this.return_item_of_given_id(35)
 
@@ -427,21 +434,21 @@ map = {
 
                 this.ending_screen()
             }
+            
+            else{
+                alert("you can't use this item here")
+            }
    
-            if(this.ship_items_used == 6){
+            if(this.sheep_items_used == 6){
                 this.current_location_object.items = []
 
-                this.ship_items_used += 1
+                this.sheep_items_used += 1
 
                 result_item = this.return_item_of_given_id(37)
                 player.items.push(result_item)
             }  
-            if(location_number == 23 && player.items[0].id == 33 && this.dragon_killed == 1){
-                result_item = this.return_item_of_given_id(34)
-
-                player.items.shift()
-                player.items.push(result_item)
-            } 
+            
+            
         }
     },
 
