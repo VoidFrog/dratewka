@@ -468,9 +468,10 @@ map = {
         if(this.command == "east" || this.command == "e"){
             if(player.x < 7 && (this.check_directions_available() == true)){
                 player.x += 1
+                informations.textContent = "You are going east..."
             }
             else{
-                alert("You can't go that way")
+                informations.textContent = "You can't go that way (east)"
             }
         }
 
@@ -479,22 +480,24 @@ map = {
             if(player.x > 1  && (this.check_directions_available() == true)){
                 if(!(player.y > 4 && player.x - 1 < 4)){
                     player.x -= 1
+                    informations.textContent = "You are going west..."
                 }
                 else{
-                    alert("You can't go that way")
+                    informations.textContent = "You can't go that way (west)"
                 }
             }
             else{
-                alert("You can't go that way")
+                informations.textContent = "You can't go that way (west)"
             }
         }
 
         else if(this.command == "north" || this.command == "n"){
             if(player.y > 1 && (this.check_directions_available() == true)){
                 player.y -= 1
+                informations.textContent = "You are going north..."
             }
             else{
-                alert("You can't go that way")
+                informations.textContent = "You can't go that way (north)"
             }
         }
 
@@ -502,13 +505,14 @@ map = {
             if(player.y < 6 && (this.check_directions_available() == true)){
                 if(!((player.y+1 == 5 || player.y+1 == 6) && player.x < 4)){
                     player.y += 1
+                    informations.textContent = "You are going south..."
                 }
                 else{
-                    alert("You can't go that way")
+                    informations.textContent = "You can't go that way (south)"
                 }
             }
             else{
-                alert("You can't go that way")
+                informations.textContent = "You can't go that way (south)"
             }
         }
     },

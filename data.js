@@ -463,3 +463,4 @@ items = [
 
 let game_div = document.getElementById('game_div')
 let content = document.getElementById('content')
+let informations = document.getElementById('informations')
